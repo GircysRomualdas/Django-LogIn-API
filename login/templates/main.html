@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .card {
+            border: 1px solid;
+            padding: 1em;
+            width: fit-content;
+        }
+        .main {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h3>Username: {{login.name}}</h3>
-    <p>LogIn: {{login.login}}</p>
+    <div class="card">
+        <p><span class="main">User</span></p>
+        <p><span class="main">Id:</span> {{login.id}}</p>
+        <p><span class="main">User Name:</span> {{login.name}}</p>
+        <p><span class="main">Password:</span> {{login.password}}</p>
+        <p><span class="main">Is Admin:</span> {{login.isadmin}}</p>
+        <p><span class="main">Creation Date:</span> {{login.creationdate}}</p>
+    </div>
 </body>
 </html>

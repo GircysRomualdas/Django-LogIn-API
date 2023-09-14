@@ -29,12 +29,17 @@
             border: 1px solid ;
             padding: 10px;
         }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <body>
     <div class="center">
         <form method="post"> {% csrf_token %}
+            <div class="error">{{error}}</div>
             {{loginForm}}
             <button type="submit">LogIn</button>
         </form>

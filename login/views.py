@@ -10,8 +10,10 @@ def indexView(request):
         form = LoginForm(request.POST)
         if form.is_valid():
             login = loginApi(form.cleaned_data['username'], form.cleaned_data['password'])
-            if login['login']:
+            if login['login'] == 'true':
                 return render(request, 'main.html', context = {'login': login,})
+            else:
+                context['error'] = 'Incorrect username or password'
 
     loginForm = LoginForm()
     context['loginForm'] = loginForm
