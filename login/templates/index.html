@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 90%;
+        }
+
+        input, label, button {
+            display: block;
+            font-size: 1vw;
+        }
+
+        button {
+            margin-top: 1em;
+        }
+
+        form {
+            margin: auto;
+        }
+
+        .center {
+            margin: auto;
+            width: 15%;
+            border: 1px solid ;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <form method="post"> {% csrf_token %}
+            {{loginForm}}
+            <button type="submit">LogIn</button>
+        </form>
+    </div>
+</body>
+
+</html>
