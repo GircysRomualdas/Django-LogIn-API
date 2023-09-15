@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .card {
+        body {
+            font-size: 1.5vw;
+        }
+        .user {
             border: 1px solid;
             padding: 1em;
             width: fit-content;
@@ -13,16 +16,32 @@
         .main {
             font-weight: bold;
         }
+        .task {
+            border: 1px solid;
+            padding: 1em;
+            margin-top: 1em;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <p><span class="main">User</span></p>
-        <p><span class="main">Id:</span> {{login.id}}</p>
-        <p><span class="main">User Name:</span> {{login.name}}</p>
-        <p><span class="main">Password:</span> {{login.password}}</p>
-        <p><span class="main">Is Admin:</span> {{login.isadmin}}</p>
-        <p><span class="main">Creation Date:</span> {{login.creationdate}}</p>
+    <div class="user">
+        <p><span class="main">User Name: </span> {{login.name}}</p>
+    </div>
+    <div>
+        {% for task in tasks %}
+            <div class="task">
+                <p><span class="main">Id: </span>{{ task.id }}</p>
+                <p><span class="main">Name: </span>{{ task.name }}</p>
+                <p><span class="main">Description: </span>{{ task.description }}</p>
+                <p><span class="main">Status: </span>{{ task.status_name }}</p>
+                <p><span class="main">Creationdate: </span>{{ task.creationdate }}</p>
+                <p><span class="main">Assignor: </span>{{ task.assignor_name }}</p>
+                <p><span class="main">Assignee: </span>{{ task.assignee_name }}</p>
+            </div>
+        {% endfor %}
     </div>
 </body>
 </html>
